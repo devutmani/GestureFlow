@@ -1,0 +1,26 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+logs/gestureflow.log*
+
+# Screenshots
+*.png
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Build
+*.egg-info/
+dist/
+build/

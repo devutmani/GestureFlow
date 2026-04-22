@@ -1,0 +1,50 @@
+# GestureFlow — Python dependencies
+# ────────────────────────────────────
+# Install all at once:
+#   pip install -r requirements.txt
+#
+# Windows users — if pyaudio fails:
+#   pip install pipwin
+#   pipwin install pyaudio
+# OR download a pre-built wheel from:
+#   https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio
+#   pip install PyAudio‑0.2.14‑cp311‑cp311‑win_amd64.whl
+
+# ── Core vision ───────────────────────────────────────────────────────────────
+opencv-python>=4.8.0
+mediapipe==0.10.5
+numpy>=1.24.0
+
+# ── System control ────────────────────────────────────────────────────────────
+pyautogui>=0.9.54
+Pillow>=10.0.0
+screen-brightness-control>=0.22.0
+
+# ── Windows audio (skip on macOS/Linux) ──────────────────────────────────────
+pycaw>=20181226; sys_platform == "win32"
+comtypes>=1.2.0; sys_platform == "win32"
+
+# ── Voice recognition ─────────────────────────────────────────────────────────
+# NOTE: voice is OPTIONAL — GestureFlow works without it.
+# If you don't need voice commands, you can skip SpeechRecognition and pyaudio.
+# Set VOICE_ENABLED = False in config/settings.py to disable voice entirely.
+
+# SpeechRecognition — the main library
+SpeechRecognition>=3.10.0
+
+# PyAudio — microphone access
+# Windows: if "pip install pyaudio" fails, use one of:
+#   pip install pipwin && pipwin install pyaudio
+#   OR install from pre-built wheel (see top of this file)
+# Linux:   sudo apt install portaudio19-dev python3-pyaudio
+# macOS:   brew install portaudio && pip install pyaudio
+pyaudio>=0.2.13
+
+# Vosk — OFFLINE speech recognition (optional — falls back to Google if absent)
+# After installing vosk, download a model:
+#   https://alphacephei.com/vosk/models  →  vosk-model-small-en-us-0.15.zip
+#   Extract to: GestureFlow/models/vosk-model-small-en-us-0.15/
+vosk>=0.3.45
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+colorama>=0.4.6
